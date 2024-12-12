@@ -62,3 +62,39 @@ npm run test:e2e -- --debug
 ```sh
 npm run lint
 ```
+
+### Project dependencies
+
+https://stackblitz.com/edit/vitejs-vite-xak7kf?file=package.json
+
+```json
+{
+  "name": "vite-vue-starter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.1.0",
+    "ant-design-vue": "^3.2.18",
+    "axios": "^1.3.6",
+    "emoji-regex": "^10.2.1",
+    "lodash-es": "^4.17.21",
+    "marked": "^4.3.0",
+    "prismjs": "^1.29.0",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.1.0",
+    "less": "^4.1.3",
+    "vite": "^4.3.0",
+    "vite-plugin-prismjs": "^0.0.8",
+    "vite-plugin-windicss": "^1.8.10",
+    "windicss": "^3.5.6"
+  }
+}
+```
