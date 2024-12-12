@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import ComputedComponent from './components/ComputedComponent.vue'
+// import ComputedComponent from './components/ComputedComponent.vue'
 import HelloWorld from './components/HelloWorld.vue'
+import WatchComponent from './components/WatchComponent.vue'
 </script>
 
 <template>
@@ -13,7 +14,7 @@ import HelloWorld from './components/HelloWorld.vue'
   </header>
 
   <main>
-    <ComputedComponent />
+    <WatchComponent />
   </main>
 </template>
 
