@@ -5,6 +5,7 @@
 import { onMounted, ref } from 'vue'
 import { marked } from 'marked'
 import Prism from 'prismjs'
+import 'prismjs/themes/prism.css'
 const parseMark = ref('')
 const loadMarkdown = async () => {
   try {
@@ -22,7 +23,7 @@ onMounted(async () => {
 })
 </script>
 
-<style>
+<style scoped>
 @import 'prismjs/themes/prism.css'; /* Scoped styles for the Markdown content */
 /* div {
   font-family: Arial, sans-serif;

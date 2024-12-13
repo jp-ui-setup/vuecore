@@ -1,14 +1,10 @@
 <template>
   <div v-html="parseMark"></div>
-  <ToasterComponent />
-  <button @click="successToast">Click me</button>
 </template>
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { marked } from 'marked'
 import Prism from 'prismjs'
-import ToasterComponent from '@/components/ToasterComponent.vue'
-import useToasterStore from '@/store/useToasterStore'
 const parseMark = ref('')
 const loadMarkdown = async () => {
   try {
@@ -19,21 +15,20 @@ const loadMarkdown = async () => {
     console.error('Error loading markdown:', error)
   }
 }
-const toasterStore = useToasterStore()
 
-const successToast = () => toasterStore.success({ text: 'Yahoooooo!' })
 onMounted(async () => {
   await loadMarkdown()
   Prism.highlightAll()
 })
 </script>
 
-<style>
+<style scoped>
 @import 'prismjs/themes/prism.css'; /* Scoped styles for the Markdown content */
 /* div {
     font-family: Arial, sans-serif;
     line-height: 1.6;
   } */
+
 h1,
 h2,
 h3 {

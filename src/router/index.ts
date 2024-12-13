@@ -1,7 +1,10 @@
 
 import ComputedPComponent from "@/components/ComputedPComponent.vue";
+import BoxShadow from "@/views/BoxShadow.vue";
+import NotFound from "@/views/NotFound.vue";
 import ReadmeComponent from "@/views/ReadmeComponent.vue";
-import { createRouter, createWebHashHistory } from "vue-router";
+import { ref } from "vue";
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
     {
@@ -13,15 +16,38 @@ const routes = [
       path: "/vue",
       name: "VueParent",
       component: ComputedPComponent
-  }
+    },
+    {
+      path: "/box-shadow",
+      name: "BoxShadow",
+      component: BoxShadow
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: NotFound
+    }
 ]
 
 const router = createRouter({
-    history:createWebHashHistory(),
+    history:createWebHistory(),
     routes
 })
+  export const isLoading = ref(false);
 
-export default router;
+  router.beforeEach((to, from, next) => {
+
+      isLoading.value = true;
+      next();
+
+
+
+  });
+
+  router.afterEach(() => {
+    setTimeout(()=>{ isLoading.value = false;    }, 1000)
+  });
+  export default router;
 
 
 // import Vue from "vue";

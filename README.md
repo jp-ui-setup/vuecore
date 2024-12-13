@@ -66,6 +66,7 @@ npm run lint
 ### Project dependencies
 
 https://stackblitz.com/edit/vitejs-vite-xak7kf?file=package.json
+https://codepen.io/andymerskin/pen/XNMWvQ?ref=madewithvuejs.com
 
 ```json
 {

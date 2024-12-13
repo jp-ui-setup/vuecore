@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <PageLoader v-if="true" />
     <v-navigation-drawer v-model="sidebar" app>
       <v-list>
         <v-list-tile v-for="item in menuItems" :key="item.title" :to="item.path">
@@ -36,8 +37,14 @@
 </template>
 
 <script lang="ts">
+import PageLoader from './components/PageLoader.vue'
+import { isLoading } from './router'
+
 export default {
   name: 'App',
+  components: {
+    PageLoader,
+  },
   data() {
     return {
       appTitle: 'Awesome App',
@@ -45,9 +52,14 @@ export default {
       menuItems: [
         { title: 'Home', path: '/', icon: 'home' },
         { title: 'Vue', path: '/vue', icon: 'face' },
-        { title: 'React', path: '/', icon: 'lock_open' },
+        { title: 'React', path: '/box-shadow', icon: 'lock_open' },
       ],
     }
+  },
+  computed: {
+    isLoading() {
+      return isLoading.value
+    },
   },
 }
 </script>
