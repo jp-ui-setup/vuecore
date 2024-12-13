@@ -1,47 +1,53 @@
-<script setup lang="ts">
-// import ComputedComponent from './components/ComputedComponent.vue'
-// import CartComponent from './components/CartComponent.vue'
-import ComputedPComponent from './components/ComputedPComponent.vue'
-import ReadmeComponent from './components/ReadmeComponent.vue'
-// import WatchComponent from './components/WatchComponent.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-  </header>
+  <v-app>
+    <v-navigation-drawer v-model="sidebar" app>
+      <v-list>
+        <v-list-tile v-for="item in menuItems" :key="item.title" :to="item.path">
+          <v-list-tile-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>{{ item.title }}</v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
 
-  <main>
-    <ComputedPComponent />
-    <ReadmeComponent />
-  </main>
+    <v-toolbar app>
+      <span class="hidden-sm-and-up">
+        <v-toolbar-side-icon @click="sidebar = !sidebar"> </v-toolbar-side-icon>
+      </span>
+      <v-toolbar-title>
+        <router-link to="/" style="cursor: pointer">
+          {{ appTitle }}
+        </router-link>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-xs-only">
+        <v-btn flat v-for="item in menuItems" :key="item.title" :to="item.path">
+          <v-icon left dark>{{ item.icon }}</v-icon>
+          {{ item.title }}
+        </v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
+
+    <v-content>
+      <router-view></router-view>
+    </v-content>
+  </v-app>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script lang="ts">
+export default {
+  name: 'App',
+  data() {
+    return {
+      appTitle: 'Awesome App',
+      sidebar: false,
+      menuItems: [
+        { title: 'Home', path: '/', icon: 'home' },
+        { title: 'Vue', path: '/vue', icon: 'face' },
+        { title: 'React', path: '/', icon: 'lock_open' },
+      ],
+    }
+  },
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+</script>
