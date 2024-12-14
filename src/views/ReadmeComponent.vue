@@ -1,10 +1,16 @@
 <template>
+  <TOCComponent />
+  <DebounceComponent />
+  <ThrottlingComponent />
   <div v-html="parseMark"></div>
 </template>
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { marked } from 'marked'
 import Prism from 'prismjs'
+import TOCComponent from '@/components/TOCComponent.vue'
+import DebounceComponent from '@/components/DebounceComponent.vue'
+import ThrottlingComponent from '@/components/ThrottlingComponent.vue'
 const parseMark = ref('')
 const loadMarkdown = async () => {
   try {

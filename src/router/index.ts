@@ -23,6 +23,11 @@ const routes = [
       component: BoxShadow
     },
     {
+      path: "/throttle",
+      name: "throttle",
+      component: ()=>import('@/views/DirectiveComponent.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
       component: NotFound

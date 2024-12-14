@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <PageLoader v-if="true" />
+    <PageLoader v-if="isLoading" />
     <v-navigation-drawer v-model="sidebar" app>
       <v-list>
         <v-list-tile v-for="item in menuItems" :key="item.title" :to="item.path">
