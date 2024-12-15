@@ -52,6 +52,7 @@ export default {
       menuItems: [
         { title: 'Home', path: '/', icon: 'home' },
         { title: 'Vue', path: '/vue', icon: 'face' },
+        { title: 'throttle', path: '/throttle', icon: 'face' },
         { title: 'React', path: '/box-shadow', icon: 'lock_open' },
       ],
     }
