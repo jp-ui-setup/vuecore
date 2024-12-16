@@ -54,6 +54,7 @@ export default {
         { title: 'Vue', path: '/vue', icon: 'face' },
         { title: 'throttle', path: '/throttle', icon: 'face' },
         { title: 'React', path: '/box-shadow', icon: 'lock_open' },
+        { title: 'TankStack', path: '/tank-stack', icon: 'lock_open' },
       ],
     }
   },

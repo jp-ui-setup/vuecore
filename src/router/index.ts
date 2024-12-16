@@ -28,6 +28,11 @@ const routes = [
       component: ()=>import('@/views/DirectiveComponent.vue')
     },
     {
+      path: "/tank-stack",
+      name: "throttle",
+      component: ()=>import('@/views/TankstackView.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
       component: NotFound
