@@ -55,6 +55,7 @@ export default {
         { title: 'throttle', path: '/throttle', icon: 'face' },
         { title: 'React', path: '/box-shadow', icon: 'lock_open' },
         { title: 'TankStack', path: '/tank-stack', icon: 'lock_open' },
+        { title: 'Pinia', path: '/pinia-store', icon: 'lock_open' },
       ],
     }
   },

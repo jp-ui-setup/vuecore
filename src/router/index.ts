@@ -33,6 +33,11 @@ const routes = [
       component: ()=>import('@/views/TankstackView.vue')
     },
     {
+      path: "/pinia-store",
+      name: "throttle",
+      component: ()=>import('@/views/PiniaCompomponent.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
       component: NotFound
