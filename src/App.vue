@@ -1,6 +1,9 @@
 <template>
   <v-app>
     <PageLoader v-if="isLoading" />
+    <h1>Hello: {{ $myGlobalProperty }}</h1>
+    <button @click="$myGlobalMethod">Call Global Method</button>
+    <MyComponent />
     <v-navigation-drawer v-model="sidebar" app>
       <v-list>
         <v-list-tile v-for="item in menuItems" :key="item.title" :to="item.path">
