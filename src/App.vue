@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <PageLoader v-if="isLoading" />
-    <h1>Hello: {{ $myGlobalProperty }}</h1>
+    <h1 v-color="'green'">Hello: {{ $myGlobalProperty }}</h1>
     <button @click="$myGlobalMethod">Call Global Method</button>
     <MyComponent />
     <v-navigation-drawer v-model="sidebar" app>
