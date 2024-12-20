@@ -128,9 +128,7 @@ import {
 
 export default {
   setup() {
-    const count = ref(0)
-
-    onBeforeMount(() => {
+    const count = ref(0)(() => {
       console.log('onBeforeMount')
     })
 
